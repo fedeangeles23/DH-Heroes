@@ -1,0 +1,22 @@
+{
+  "name": "heroes",
+  "version": "1.0.0",
+  "description": "El coso de los heroes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedeangeles23/heroes.git"
+  },
+  "author": "Federico Angeles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fedeangeles23/heroes/issues"
+  },
+  "homepage": "https://github.com/fedeangeles23/heroes#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
