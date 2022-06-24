@@ -70,7 +70,18 @@ nav ul li a{
 .select{
     background: #359ef9;
     padding: 10px 30px;
-    color: white;
+    color: #FAFAFA;
+    border-radius: 20px;
+}
+
+.select:hover{
+    box-shadow: 1px 0px 10px 0px #20202070;
+}
+
+.select-2:hover{
+    background: #359ef9;
+    padding: 10px 30px;
+    color: #FAFAFA;
     border-radius: 20px;
 }
 
