@@ -1,162 +1,93 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
-  body{
-    background: #000000;
-    background: linear-gradient(180deg, #000000 0%, #790909 85%);
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  .header {
-    width: 100%;
-    background-color: #000000;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-.navbar {
-    width: 100%;
-    margin: auto;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
+.container__card{
+  max-width: 1200px;  /* Definido el ancho del contenedor de las tarjetas */
+  padding: 20px;  /* Relleno del contenedor para que no esté todo muy comprimido */
+  padding-bottom: 40px;   /* Para que se despeguen las cards del footer */
+  margin: auto;   /* Se mantiene centrado automáticamente */
+  margin-top: 180px;  /* Para que se despegue del header */
+  display: flex;
+  flex-wrap: wrap;    /* Para envolver o agrupar según corresponda */
+  justify-content: center;    /* Elementos centrados con respecto al eje X */
 }
 
-.navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 10px;
-    position: relative;
-  }
-  
-  .navbar ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-  }
-  
-  .navbar ul li::before {
-    content: "";
-    height: 3px;
-    width: 0%;
-    background: rgb(255, 0, 0);
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    transition: 0.4s ease-in-out;
-  }
-  
-  .navbar ul li:hover::before {
-    width: 100%;
-  }
-  
+.card{
+  width: 300px;   /* Ancho de la tarjeta */
+  position: relative; /* Posición relativa con respecto a su padre */
+  margin: 20px;   /* Para que las tarjetas mantengan un márgen entre si */
+  font-family: sans-serif;
+  transition: all 300ms;
+  border-radius: 20px;
+}
 
-  /*HOME*/
-section {
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-  
-  .contenedor {
-    width: 100%;
-    max-width: 1200px;
-    height: 430px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-  }
-  .contenedor .card {
-    width: 300px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 2px 2px white;
-    overflow: hidden;
-    margin: 12px;
-    text-align: center;
-    transition: all 0.25s;  
-  }
-  
-  .contenedor .card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px red;
-  }
-  
-  .contenedor .card img{
-    width: auto;
-    height: 300px;
-  }
-  
-  .contenedor .card h4{
-    font-weight: 600;
-    color: white;
-  }
-  .contenedor .card p{
-   padding: 10px 10px 10px 10px;
-   font-size: 12px;
-   font-weight: 300;
-   color: white;
-  }
-  
-  .contenedor .card a{
-    text-decoration: none;
-  }
-  
-  /*HEROES*/
-  .heroes {
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: none;
-  }	
-  
-  .heroes .dh {
-      width: 700px;
-      height: auto;
-      overflow: hidden;
-      margin: auto;
-  }
-  .heroes h1{
-    font-size: 50px;
-  }
-  
-  .heroes p{
-    font-size: 14px;
-    padding: 5px;
-    color: white;
-    text-align: justify;
-  }
-   
-  .heroes .dh img {
-    width: 25%;
-    height: 100%;
-    align-items: center;
-  }
+.card:hover{
+  box-shadow: 1px 1px 20px -10px #20202049;   /* Da una sombra suave al pasar el mouse por encima */
+}
 
-  /* Footer */
+.card:hover .info__description{
+  margin-top: 0;  /* Restaura el márgen de info description de -220 a 0 */
+  border-radius: 0px 0px 20px 20px;   /* Redondea los bordes inferiores del contenedor de la descripción */
+}
 
-  footer {
-    width: 100%;
-    margin: auto;
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-  }
+.card:hover .icon{
+  margin-top: -110px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.icon{
+  width: 100%;    /* Para que ocupe el 100% del ancho de su padre */
+  height: 220px;
+  background: #EFF3F5;
+  display: flex;
+  justify-content: center;    /* Centrado con respecto al exe X */
+  align-items: center;    /* Centrado con respecto al eje Y */
+  position: relative; /* Posición relativa con respecto a su padre para poder uzar z-index */
+  z-index: 1; /* El valor 1 coloca por encima del texto con valor 0 por defecto para dar el efecto de ocultamiento  */
+  border-radius: 20px;
+}
+
+.icon img{
+  height: 220px;   /* Tamaño de la imágen */
+  width: 100%;
+}
+
+.info__description{
+  width: 100%;    /* Para que ocupe el 100% del ancho de su padre */
+  height: 220px;  /* La altura de la descripción debe coincidir con la altura de la imágen para generar el efecto de ocultar */
+  color: #474747; /* Color del texto */
+  background: #a9b4b9;    /* Fondo del texto */
+  padding: 20px;  /* Para tener un relleno en el márgen */
+  margin-top: -220px; /* Esto es para subir el texto a la altura de la alturda de la imagen [*margin-top: -220px; con * para trabajar antes de que funcione ese estilo]*/
+  transition: all 400ms cubic-bezier(0.5,0,0,1); /* Para suavizar la animación de despliegue */
+  border-radius: 20px;
+}
+
+.info__description p{
+  font-size: 14px;    /* Tamaño del párrafo */
+  margin-top: 10px;   /* Para mantener un margen con respecto al contenedor de arriba */
+  display: box;   /* se comportará como si fuese un display:block pero serán sus elementos hijos los afectados. */
+  display: -webkit-box;   /* Para compatibilidad con navegadores */
+  display: -moz-box;  /* Compatible para mozilla */
+  box-orient: vertical;   /* Esta propiedad indíca en que eje se van a repartir las cajas flexibles hijas de este contenedor. */
+  -webkit-box-orient: vertical;   /* si indicamos "box-orient:vertical" lo harán en el "Y". */
+  -moz-box-orient: vertical;  /* si indicamos "box-orient:vertical" lo harán en el "Y". */
+  line-clamp: 5;  /* Para recortar la línea de texto en un valor */
+  -webkit-line-clamp: 5;  /* Para compatibilidad con otros navegadores */
+  overflow: hidden;   /* Para ocultar el excedente del texto recortado */
+}
+
+.info__description input{
+  margin-top: 20px;   /* Para que se despegue un poco del párrafo */
+  padding: 10px 20px; /* Relleno de arriba abajo 10 y relleno de izquierda a derecha 20 */
+  background: #2196f3;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;    /* Para cambiar el puntero al pasar el cursor */
+  border: none;   /* Sin borde del botón */
+  border-radius: 20px;    /* Radio del botón */
+  box-shadow: 1px 1px 30px -5px #20202049;    /* Sombra del botón 1px , 1 px de desvanecimiento 30px y -5px de grosor el 49 al final del negro es la opacidad*/
+  transition: box-shadow 100ms;
+}
+
+.info__description input:hover{
+  box-shadow: 1px 1px 30px -5px #20202070;
+}
