@@ -1,0 +1,140 @@
+/* HEADER */
+
+header{
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    width: 100%; /* Me aseguro que tenga el 100% del ancho por defecto */
+    height: 100px;  /* Alto del header */
+    font-family: 'Poppins', sans-serif; /* Fuente de la familia */
+    position: fixed;    /* Para que se mantenga fijo por encima de todo */
+    top: 0; /* Para que se mantenga arriba de todo */
+    right: 0;   /* Para que se mantenga arriba a la derecha */
+    z-index: 100; /* Para que se mantenga por encima de todos los elementos */
+    transition: all 300ms
+}
+
+/* Evento del menú */
+.move_content{
+    right: 180px;   /* Esto es para "empujar" el contenido oculto del nav previamente configurado en las querys */
+}
+
+.container__header{
+    max-width: 1200px; /* ancho máximo */
+    height: 100%;   /* Para que ocupe el alto máximo del header */
+    display: flex;
+    justify-content: space-between; /* Disposicón flexible de los elementos */
+    margin: auto;   /* Para que esté centrado */
+    padding: 0px 20px;  /* 0px de relleno de arriba abajo y 20px de izquierda a derecha */
+}
+
+header .logo {
+    height: 100%;
+    display: flex;
+    justify-content: center;    /* Alínea en el eje x */
+    align-items: center;    /* Alínea en el eje y */
+}
+
+header .logo p{
+    width: 150px;
+}
+
+/* NAV */
+
+.container__nav{
+    position: relative;
+    height: 100%;
+}
+
+nav{
+    height: 100%;   /* Ocupa el 100% de su padre */
+}
+
+nav ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li{
+    margin: 0px 20px; /* 0px de margen de arriba abajo y 20px de izquierda a derecha */
+    list-style: none;   /* Le quito los estilos a las listas */
+}
+
+nav ul li a{
+    color: #373737;
+    font-size: 14px;    /* Tamaño de las etiquetas */
+    text-decoration: none;  /* Quito el underline */
+    font-weight: 500;
+}
+
+.select{
+    background: #359ef9;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 20px;
+}
+
+/* NAV ANIMADO */
+
+.nav_mod{
+    height: 70px;
+    box-shadow: 1px 1px 10px 0px #00000010;
+    background: white;
+}
+
+/* Menú Nav */
+
+.btn__menu{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background 300ms;
+    display: none;
+}
+
+.btn__menu:hover{
+    background: #e7e5e5;
+}
+
+/* Media Screens del menú nav */
+
+@media screen and (max-width: 780px) {
+
+    .container__nav{
+        display: flex;  /* Alinear menu */
+        justify-content: center;    /* centrar con respecto al eje x */
+        align-items: center;    /* centrar con respecto al eje y */
+    }
+
+    .btn__menu{
+        display: flex;  /* Habilita el menú del nav */
+    }
+
+    nav{
+        height: 100%;   /* Para que ocupe el 100% del alto */
+        background: linear-gradient(0.75turn, #3f87a6, #ebf8e1, #f69d3c);
+        position: fixed;    /* Para que se mantenga por encima de todo */
+        top: 0; /* Posición fija */
+        right: -180px;   /* Posición fija en 0 para diseñar y una vez diseñado se pone en valor negativo para ocultar el nav y ser empujado con un evento*/
+        padding: 0 24px;    /* Relleno de arriba y abjo 0 y relleno derecha e izquierda en 40px */
+        transition: all 300ms;
+    }
+
+    .show_nav{
+        right: 0px; /* Para restaurar la posición del nav -180px */
+    }
+
+    nav ul{
+        flex-direction: column; /* Disposición de los elementos en columna para general el efecto */
+    }
+
+    nav ul li{
+        margin: 20px 0px;   /* Disposición con respecto al margen superior de las listas */
+    }
+
+}
