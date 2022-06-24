@@ -19,7 +19,7 @@
 }
 
 .card:hover{
-  box-shadow: 1px 1px 20px -10px #20202049;   /* Da una sombra suave al pasar el mouse por encima */
+  box-shadow: 1px 1px 20px -10px #02020249;   /* Da una sombra suave al pasar el mouse por encima */
 }
 
 .card:hover .info__description{
