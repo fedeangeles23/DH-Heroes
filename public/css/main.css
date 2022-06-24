@@ -3,7 +3,7 @@
   padding: 20px;  /* Relleno del contenedor para que no esté todo muy comprimido */
   padding-bottom: 40px;   /* Para que se despeguen las cards del footer */
   margin: auto;   /* Se mantiene centrado automáticamente */
-  margin-top: 180px;  /* Para que se despegue del header */
+  margin-top: 80px;  /* Para que se despegue del header */
   display: flex;
   flex-wrap: wrap;    /* Para envolver o agrupar según corresponda */
   justify-content: center;    /* Elementos centrados con respecto al eje X */
@@ -15,7 +15,6 @@
   margin: 20px;   /* Para que las tarjetas mantengan un márgen entre si */
   font-family: sans-serif;
   transition: all 300ms;
-  border-radius: 20px;
 }
 
 .card:hover{
@@ -27,12 +26,7 @@
   border-radius: 0px 0px 20px 20px;   /* Redondea los bordes inferiores del contenedor de la descripción */
 }
 
-.card:hover .icon{
-  margin-top: -110px;
-  border-radius: 20px 20px 0px 0px;
-}
-
-.icon{
+.photo{
   width: 100%;    /* Para que ocupe el 100% del ancho de su padre */
   height: 220px;
   background: #EFF3F5;
@@ -41,23 +35,32 @@
   align-items: center;    /* Centrado con respecto al eje Y */
   position: relative; /* Posición relativa con respecto a su padre para poder uzar z-index */
   z-index: 1; /* El valor 1 coloca por encima del texto con valor 0 por defecto para dar el efecto de ocultamiento  */
-  border-radius: 20px;
+  border-radius: 20px 20px 20px 20px;
 }
 
-.icon img{
+.photo img{
   height: 220px;   /* Tamaño de la imágen */
   width: 100%;
+  border-radius: 20px 20px 20px 20px;
+  transition: border-radius 900ms;  /* Para que el borde no se active de manera brusca */
+}
+
+.photo img:hover{
+  border-radius: 20px 20px 0px 0px;
 }
 
 .info__description{
   width: 100%;    /* Para que ocupe el 100% del ancho de su padre */
   height: 220px;  /* La altura de la descripción debe coincidir con la altura de la imágen para generar el efecto de ocultar */
   color: #474747; /* Color del texto */
-  background: #a9b4b9;    /* Fondo del texto */
+  background: white;    /* Fondo del texto */
   padding: 20px;  /* Para tener un relleno en el márgen */
-  margin-top: -220px; /* Esto es para subir el texto a la altura de la alturda de la imagen [*margin-top: -220px; con * para trabajar antes de que funcione ese estilo]*/
+  *margin-top: -220px; /* Esto es para subir el texto a la altura de la alturda de la imagen [*margin-top: -220px; con * para trabajar antes de que funcione ese estilo]*/
   transition: all 400ms cubic-bezier(0.5,0,0,1); /* Para suavizar la animación de despliegue */
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .info__description p{
@@ -75,6 +78,7 @@
 }
 
 .info__description input{
+  width: 100px;
   margin-top: 20px;   /* Para que se despegue un poco del párrafo */
   padding: 10px 20px; /* Relleno de arriba abajo 10 y relleno de izquierda a derecha 20 */
   background: #2196f3;
@@ -87,7 +91,6 @@
   box-shadow: 1px 1px 30px -5px #20202049;    /* Sombra del botón 1px , 1 px de desvanecimiento 30px y -5px de grosor el 49 al final del negro es la opacidad*/
   transition: box-shadow 100ms;
 }
-
 .info__description input:hover{
   box-shadow: 1px 1px 30px -5px #20202070;
 }
